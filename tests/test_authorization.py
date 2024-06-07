@@ -10,8 +10,7 @@ def test_auth_main_page(driver):
     driver.find_element(*TestLocators.authorization_password).send_keys(data.password_valid)
     driver.find_element(*TestLocators.button_authorization).click()
     WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(TestLocators.button_order))
-    assert driver.find_element(*TestLocators.button_order).text == "Оформить заказ"
-    driver.quit()
+    assert driver.find_element(*TestLocators.button_order).is_displayed()
 
 
 def test_auth_personal_account(driver):
@@ -20,8 +19,7 @@ def test_auth_personal_account(driver):
     driver.find_element(*TestLocators.authorization_password).send_keys(data.password_valid)
     driver.find_element(*TestLocators.button_authorization).click()
     WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(TestLocators.button_order))
-    assert driver.find_element(*TestLocators.button_order).text == "Оформить заказ"
-    driver.quit()
+    assert driver.find_element(*TestLocators.button_order).is_displayed()
 
 
 def test_auth_registration_link(driver):
@@ -32,8 +30,7 @@ def test_auth_registration_link(driver):
     driver.find_element(*TestLocators.authorization_password).send_keys(data.password_valid)
     driver.find_element(*TestLocators.button_authorization).click()
     WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(TestLocators.button_order))
-    assert driver.find_element(*TestLocators.button_order).text == "Оформить заказ"
-    driver.quit()
+    assert driver.find_element(*TestLocators.button_order).is_displayed()
 
 
 def test_auth_forgot_password_link(driver):
@@ -44,5 +41,4 @@ def test_auth_forgot_password_link(driver):
     driver.find_element(*TestLocators.authorization_password).send_keys(data.password_valid)
     driver.find_element(*TestLocators.button_authorization).click()
     WebDriverWait(driver, 10).until(expected_conditions.visibility_of_element_located(TestLocators.button_order))
-    assert driver.find_element(*TestLocators.button_order).text == "Оформить заказ"
-    driver.quit()
+    assert driver.find_element(*TestLocators.button_order).is_displayed()

@@ -17,6 +17,7 @@ class TestLocators:
     button_exit_personal_account = By.XPATH, ".//button[text()='Выход']"  # кнопка Выход в личном кабинете
     constructor_link = By.XPATH, ".//a[contains(@class, 'AppHeader_header__link__3D_hX') and @href= '/']"  # Конструктор
     sauces_link = By.XPATH, ".//span[text() = 'Соусы']"  # раздел Соусы
+    buns_link = (By.XPATH, ".//span[text()= 'Булки']")
     fillings_link = By.XPATH, ".//span[text() = 'Начинки']"  # раздел Начинки
     authorization_link = By.XPATH, ".//a[contains(@class, 'Auth_link__1fOlj') and @href='/login']"  # авторизоваться
     authorization_email = By.XPATH, ".//label[text()= 'Email']/parent::div/input"  # email при авторизации
@@ -25,6 +26,7 @@ class TestLocators:
     button_order = By.XPATH, ".//button[text()= 'Оформить заказ']"  # кнопка Оформить заказ
     header_enter = By.XPATH, ".//h2[text()= 'Вход']"  # заголовок 'Вход'
     forgot_password_link = By.XPATH, ".//a[contains(@class, 'Auth_link__1fOlj') and @href='/forgot-password']"  # восстановить пароль
-    bun_name = By.XPATH, ".//p[text()= 'Флюоресцентная булка R2-D3']"  # булка
-    sauce_name = By.XPATH, ".//p[text()= 'Соус Spicy-X']"  # соус
-    filling_name = By.XPATH, ".//p[text()= 'Мясо бессмертных моллюсков Protostomia']"  # начинка
+    buns_class = (By.XPATH, ".//span[text()= 'Булки']/parent::div")
+    sauces_class = (By.XPATH, ".//span[text()= 'Соусы']/parent::div")
+    fillings_class = (By.XPATH, ".//span[text()= 'Начинки']/parent::div")
+    current_class = (By.XPATH, ".//div[@class= 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']")

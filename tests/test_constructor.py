@@ -8,9 +8,14 @@ def test_move_to_buns_section(authorization):
         expected_conditions.visibility_of_element_located(TestLocators.constructor_link))
     authorization.find_element(*TestLocators.constructor_link).click()
     WebDriverWait(authorization, 10).until(
-        expected_conditions.visibility_of_element_located(TestLocators.bun_name))
-    assert authorization.find_element(*TestLocators.bun_name).text == 'Флюоресцентная булка R2-D3'
-    authorization.quit()
+        expected_conditions.visibility_of_element_located(TestLocators.sauces_link))
+    authorization.find_element(*TestLocators.sauces_link).click()
+    WebDriverWait(authorization, 10).until(
+        expected_conditions.visibility_of_element_located(TestLocators.buns_link))
+    authorization.find_element(*TestLocators.buns_link).click()
+    buns_class_constructor = authorization.find_element(*TestLocators.buns_class)
+    current_class_constructor = authorization.find_element(*TestLocators.current_class)
+    assert buns_class_constructor == current_class_constructor
 
 
 def test_move_to_sauces_section(authorization):
@@ -20,10 +25,9 @@ def test_move_to_sauces_section(authorization):
     WebDriverWait(authorization, 10).until(
         expected_conditions.element_to_be_clickable(TestLocators.sauces_link))
     authorization.find_element(*TestLocators.sauces_link).click()
-    WebDriverWait(authorization, 10).until(
-        expected_conditions.visibility_of_element_located(TestLocators.sauce_name))
-    assert authorization.find_element(*TestLocators.sauce_name).text == 'Соус Spicy-X'
-    authorization.quit()
+    sauces_class_constructor = authorization.find_element(*TestLocators.sauces_class)
+    current_class_constructor = authorization.find_element(*TestLocators.current_class)
+    assert sauces_class_constructor == current_class_constructor
 
 
 def test_move_to_fillings_section(authorization):
@@ -33,7 +37,6 @@ def test_move_to_fillings_section(authorization):
     WebDriverWait(authorization, 10).until(
         expected_conditions.element_to_be_clickable(TestLocators.fillings_link))
     authorization.find_element(*TestLocators.fillings_link).click()
-    WebDriverWait(authorization, 10).until(
-        expected_conditions.visibility_of_element_located(TestLocators.filling_name))
-    assert authorization.find_element(*TestLocators.filling_name).text == 'Мясо бессмертных моллюсков Protostomia'
-    authorization.quit()
+    fillings_class_constructor = authorization.find_element(*TestLocators.fillings_class)
+    current_class_constructor = authorization.find_element(*TestLocators.current_class)
+    assert fillings_class_constructor == current_class_constructor

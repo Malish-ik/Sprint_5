@@ -12,8 +12,10 @@ from selenium import webdriver
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
-    return driver
+    driver.get(data.main_page)
+    #return driver
+    yield driver
+    driver.quit()
 
 
 @pytest.fixture
